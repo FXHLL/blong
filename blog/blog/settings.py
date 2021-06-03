@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'#'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'#'UTC'
 
 USE_I18N = True
 
@@ -190,5 +191,15 @@ LOGGING = {
         },
     }
 }
-
+# 替换系统User来使用自定义的
 AUTH_USER_MODEL='users.User'
+
+# 修改系统默认跳转连接
+LOGIN_URL='/login/'
+
+# 设置上传图片保存到media目录下
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
+# 设置图片访问的统一路由
+MEDIA_URL='/media/'
+

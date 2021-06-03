@@ -3,11 +3,9 @@ from django.urls import path
 from users.views import RegisterView,ImageCodeView
 from users.views import SmsCodeView,LoginView
 from users.views import LogoutView,ForgetPasswordView
-from users.views import UserCenterView
+from users.views import UserCenterView,WriteBlogView
 urlpatterns = [
     #path第一个参数:路由,path第二个参数:视图函数名
-    path('admin/',RegisterView.as_view()),
-
     path('register/',RegisterView.as_view(),name='register'),
     # 图片验证码路由
     path('imagecode/',ImageCodeView.as_view(),name='imagecode'),
@@ -19,6 +17,8 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     # 忘记密码
     path('forgetpassword/',ForgetPasswordView.as_view(),name='forgetpassword'),
-
+    # 个人中心
     path('center/', UserCenterView.as_view(), name='center'),
+    # 写博客
+    path('writeblog/', WriteBlogView.as_view(), name='writeblog'),
 ]

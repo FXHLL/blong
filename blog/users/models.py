@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
-
+    # 手机
     mobile=models.CharField(max_length=11,unique=True,blank=False)
     # 头像
     avatar=models.ImageField(upload_to='avatar/%Y%m%d/',blank=True)
@@ -12,6 +12,9 @@ class User(AbstractUser):
 
     # 修改默认的字段为号码
     USERNAME_FIELD = 'mobile'
+
+    REQUIRED_FIELDS = ['username','email']
+
     class Meta:
         db_table='tb_users'
         verbose_name='用户管理'

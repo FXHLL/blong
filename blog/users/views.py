@@ -118,7 +118,7 @@ from random import randint
 from libs.yuntongxun.sms import CCP
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from home.models import ArticleCategory
+from home.models import ArticleCategory,Article
 
 
 class SmsCodeView(View):

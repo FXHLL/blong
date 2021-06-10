@@ -53,6 +53,11 @@ class IndexView(View):
             'page_num': page_num
         }
         return render(request, 'index.html', context=context)
+
+    # 在views中添加一个方法，用于处理对于这个页面的请求。注意这里return的时候用来render
+    # 虽然HttpResponses可以返回HTML页面，但是当我们需要对模板进行填充的时候它就不行了
+    # render函数的功能是载入模板，填充数据，然后生成HttpResponse对象，然后返回这个对象
+
 from home.models import Comment
 class DetailView(View):
 

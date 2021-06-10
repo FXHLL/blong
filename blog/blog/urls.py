@@ -18,15 +18,14 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 
-# import logging
-# logger=logging.getLogger('django')
-#
-# def log(request):
-#
-#     logger.info('info')
-#     return HttpResponse("test")
 
+# include()函数实际上就是返回一个元组：([], None, None)
 
+# 第一个元素可以是一个列表，列表中盛放url()子路由配置；
+# 第二个元素是app_name，可以为None;
+# 第三个元素是namespace，需要反向生成url时，可根据需求填写
+
+# 在全局的urls.py中使用include方法实现url映射分发。
 
 urlpatterns = [
     path('admin/', admin.site.urls),
